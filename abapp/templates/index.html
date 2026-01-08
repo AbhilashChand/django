@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+          crossorigin="anonymous">
+
+    <title>Text Utility</title>
+  </head>
+
+  <body>
+
+<form action="/analyze/" method="post"> {% csrf_token %}
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Text Utility</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+      </ul>
+
+      <!-- NO FORM INSIDE FORM -->
+      <div class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button">
+          Search
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ALERT -->
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Welcome to TextUtils!</strong> You can do anything with your text here!
+    <button type="button" class="close" data-dismiss="alert">
+      <span>&times;</span>
+    </button>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+
+    <div class="form-group">
+      <label>Enter your text here</label>
+      <textarea class="form-control" name="text" rows="9"></textarea>
+    </div>
+
+    <div class="custom-control custom-switch">
+      <input type="checkbox" name="removepunc" class="custom-control-input" id="c1">
+      <label class="custom-control-label" for="c1">Remove Punctuations</label>
+    </div>
+
+    <div class="custom-control custom-switch">
+      <input type="checkbox" name="fullcaps" class="custom-control-input" id="c2">
+      <label class="custom-control-label" for="c2">UPPERCASE</label>
+    </div>
+
+    <div class="custom-control custom-switch">
+      <input type="checkbox" name="newlineremover" class="custom-control-input" id="c3">
+      <label class="custom-control-label" for="c3">New Line Remover</label>
+    </div>
+
+    <div class="custom-control custom-switch">
+      <input type="checkbox" name="extraspaceremover" class="custom-control-input" id="c4">
+      <label class="custom-control-label" for="c4">Extra Space Remover</label>
+    </div>
+
+    <button type="submit" class="btn btn-dark mt-3">
+      Analyze Text
+    </button>
+
+  </div>
+</form>
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
